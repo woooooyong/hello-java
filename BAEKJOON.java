@@ -7,12 +7,13 @@ public class BAEKJOON {
         
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println("         ,r'\"7");
-        System.out.println("r`-_   ,'  ,/");
-        System.out.println(" \\. \". L_r'");
-        System.out.println("   `~\\/");
-        System.out.println("      |");
-        System.out.println("      |");
+        String word = br.readLine();
+        String[] croatia = {"c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="};
 
+        for (String pattern : croatia){
+            word = word.replace(pattern, "*");
+        }
+
+        System.out.println(word.length());
     }
 }
