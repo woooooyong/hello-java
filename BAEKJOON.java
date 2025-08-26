@@ -6,14 +6,20 @@ public class BAEKJOON {
     public static void main(String[] args) throws IOException{
         
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        String word = br.readLine();
-        String[] croatia = {"c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="};
-
-        for (String pattern : croatia){
-            word = word.replace(pattern, "*");
+        int N = Integer.parseInt(br.readLine());
+        int result = 0;
+        for (int i = 1; i < N; i++){
+            int sum = i;
+            int temp = i;
+            while (temp > 0) {
+                sum += temp%10;
+                temp = temp/10;
+            }
+            if (sum == N){
+                result = i;
+                break;
+            }
         }
-
-        System.out.println(word.length());
+        System.out.println(result);
     }
 }
